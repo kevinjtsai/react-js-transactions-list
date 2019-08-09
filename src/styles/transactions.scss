@@ -5,7 +5,6 @@
 .app-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .app-header {
@@ -20,6 +19,26 @@
   margin-left: 0px;
   padding: 0 0rem;
   font-size: 24px;
+}
+
+.filters-container {
+  display: flex;
+  align-self: center;
+  width: 1200px;
+}
+
+.search-text-input {
+  border: 1px solid white;
+  box-shadow: 2px 2px 6px lighten(#A2B2FA, 13%);
+  height: 10px;
+  width: 200px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 300;
+  padding: 1rem 0rem 1rem 2rem;
+  &:focus {
+    outline: none;
+  }
 }
 
 .transactions-table {

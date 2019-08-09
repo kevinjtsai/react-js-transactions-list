@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import TransactionListItem from './TransactionItem';
 import TransactionsContext from '../context/transactions-context';
+import selectTransactions from '../selectors/transactions';
 
 const TransactionsList = () => {
 
-    const { transactions } = useContext(TransactionsContext);
+    const { transactions, filters } = useContext(TransactionsContext);
 
     return (
         <table className="transactions-table">
@@ -19,12 +20,12 @@ const TransactionsList = () => {
             </thread>
             <tbody className="table-body">
             {
-            transactions.length === 0 ? (
+            selectTransactions(transactions, filters).length === 0 ? (
                 <tr className="table-item">
                 <span>No transactions</span>
                 </tr>
             ) : (
-                transactions.map((transaction) => {
+                selectTransactions(transactions, filters).map((transaction) => {
                 return <TransactionListItem key={transactions.description} transaction={transaction} />;
                 })
             )

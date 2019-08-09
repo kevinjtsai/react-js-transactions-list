@@ -1,29 +1,42 @@
-import React, { useReducer } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import '../styles/transactions.scss';
+import TransactionFilters from '../components/TransactionFilters';
 import TransactionList from '../components/TransactionList';
 import TransactionsContext from '../context/transactions-context';
+import transactionsReducer from '../reducers/transactions';
 import filtersReducer from '../reducers/filters';
 import mockData from '../mock-data/mock-data';
+import moment from 'moment';
+
+const filtersReducerDefaultState = {
+  searchText: '',
+  sortBy: 'date',
+  startDate: moment().startOf('month'),
+  endDate: moment().endOf('month'),
+};
 
 function TransactionsApp() {
+  const [ filters, filtersDispatch ] = useReducer(filtersReducer, filtersReducerDefaultState);
+  const [ transactions, transactionsDispatch ] = useReducer(transactionsReducer, []);
 
-  const [ filters, dispatch ] = useReducer(filtersReducer, []);
+  console.log("filters " + filters);
 
-  const transactions = mockData;
-
-  // useEffect(() => {
-  //   if (transactions) {
-  //     dispatch({ type: 'POPULATE_TRANSACTIONS', transactions });
-  //   }
-  // }, []);
+  useEffect(() => {
+    const transactions = mockData;
+    if (transactions) {
+      console.log('dispatching populate_transactions')
+      transactionsDispatch({ type: 'POPULATE_TRANSACTIONS', transactions });
+    }
+  }, []);
 
   return (
-    <TransactionsContext.Provider className="app" value={{ transactions, filters, dispatch }}>
+    <TransactionsContext.Provider className="app" value={{ transactions, transactionsDispatch, filters, filtersDispatch }}>
       <div className="app-container">
         <header className="app-header">
           <h1 className="transctions-title">Transactions</h1>
         </header>
-        <TransactionList></TransactionList>
+        <TransactionFilters />
+        <TransactionList />
       </div>
     </TransactionsContext.Provider>
   );

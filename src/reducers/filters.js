@@ -1,18 +1,9 @@
-import moment from 'moment';
-
-const filtersReducerDefaultState = {
-  text: '',
-  sortBy: 'date',
-  startDate: moment().startOf('month'),
-  endDate: moment().endOf('month'),
-};
-
-const filtersReducer = (state = filtersReducerDefaultState, action) => {
+const filtersReducer = (state, action) => {
   switch (action.type) {
-    case 'SET_TEXT_FILTER':
+    case 'SET_SEARCH_TEXT_FILTER':
       return {
         ...state,
-        text: action.text,
+        searchText: action.searchText,
       }
     case 'SORT_BY_AMOUNT':
       return {

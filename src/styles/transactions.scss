@@ -2,28 +2,34 @@
   text-align: center;
 }
 
-.app-header {
+.app-container {
   display: flex;
-  flex-direction: row;
-  align-items: left;
-  justify-content: left;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.app-header {
   font-size: calc(2px + 2vmin);
   color: black;
+  display: flex;
+  align-self: center;
+  width: 1200px;
 }
 
 .transctions-title {
-  margin-left: 25px;
-  padding: 0 1.6rem;
+  margin-left: 0px;
+  padding: 0 0rem;
   font-size: 24px;
 }
 
 .transactions-table {
-  margin: 0px 50px 0px 50px;
-  padding: 0 1.6rem;
+  margin-top: 20px;
   box-shadow: 2px 2px 6px lighten(#A2B2FA, 13%);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  align-self: center;
+  width: 1200px;
 }
 
 .table-header {

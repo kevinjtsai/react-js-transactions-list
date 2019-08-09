@@ -2,34 +2,35 @@ import React, { useContext } from 'react';
 import TransactionListItem from './TransactionItem';
 import TransactionsContext from '../context/transactions-context';
 
-const TransactionsList = (props) => {
+const TransactionsList = () => {
 
     const { transactions } = useContext(TransactionsContext);
 
     return (
-        <div className="content-container">
-            <div className="list-header">
-            <div className="show-for-mobile">Transactions</div>
-            <div className="show-for-desktop">Date</div>
-            <div className="show-for-desktop">Description</div>
-            <div className="show-for-desktop">Amount</div>
-            <div className="show-for-desktop">Type</div>
-            <div className="show-for-desktop">Account</div>
-            </div>
-            <div className="list-body">
+        <table className="transactions-table">
+            <thread className="table-header">
+              <tr className="table-header-row">
+                <td className="table-header-row-data">Date</td>
+                <td className="table-header-row-data-long">Description</td>
+                <td className="table-header-row-data">Amount</td>
+                <td className="table-header-row-data">Type</td>
+                <td className="table-header-row-data">Account</td>
+              </tr>
+            </thread>
+            <tbody className="table-body">
             {
             transactions.length === 0 ? (
-                <div className="list-item list-item--message">
+                <tr className="table-item">
                 <span>No transactions</span>
-                </div>
+                </tr>
             ) : (
                 transactions.map((transaction) => {
                 return <TransactionListItem key={transactions.description} transaction={transaction} />;
                 })
             )
             }
-            </div>
-        </div>
+            </tbody>
+        </table>
     )
 };
 

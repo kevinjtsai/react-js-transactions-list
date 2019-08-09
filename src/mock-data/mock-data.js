@@ -8,57 +8,57 @@ const mockData = [
     },
     {
         date: '3/31/19',
-        description: 'Grace Street 1',
-        amount: '$12.21',
+        description: 'SQ *THINK COFFEE TRIBECA',
+        amount: '$200.21',
         type: 'Restaurants',
         account: 'Sapphire Reserve'
     },
     {
         date: '3/31/19',
-        description: 'Grace Street 2',
-        amount: '$12.21',
+        description: 'STARBUCKS STORE 14540',
+        amount: '$29.21',
         type: 'Restaurants',
         account: 'Sapphire Reserve'
     },
     {
         date: '3/31/19',
-        description: 'Grace Street 3',
-        amount: '$12.21',
+        description: 'NEW YORK MART MOTT ST',
+        amount: '$312.21',
         type: 'Restaurants',
         account: 'Sapphire Reserve'
     },
     {
         date: '3/31/19',
-        description: 'Grace Street 4',
-        amount: '$12.21',
+        description: 'TST* THE HOUSE',
+        amount: '$15.21',
         type: 'Restaurants',
         account: 'Sapphire Reserve'
     },
     {
         date: '3/31/19',
-        description: 'Grace Street 5',
-        amount: '$12.21',
+        description: 'MORTONWILLIAMS GRY',
+        amount: '$32.21',
         type: 'Restaurants',
         account: 'Sapphire Reserve'
     },
     {
         date: '3/31/19',
-        description: 'Grace Street 6',
-        amount: '$12.21',
+        description: 'FAIRWAY CHELSEA',
+        amount: '$62.21',
         type: 'Restaurants',
         account: 'Sapphire Reserve'
     },
     {
         date: '3/31/19',
-        description: 'Grace Street 7',
-        amount: '$12.21',
+        description: 'TRADER JOE\'S #544 QPS',
+        amount: '$52.21',
         type: 'Restaurants',
         account: 'Sapphire Reserve'
     },
     {
         date: '3/31/19',
-        description: 'Grace Street 8',
-        amount: '$12.21',
+        description: 'SQ *PURE GREEN 8TH STREET',
+        amount: '$9.21',
         type: 'Restaurants',
         account: 'Sapphire Reserve'
     },

@@ -1,23 +1,13 @@
 import React from 'react';
 
 export const TransactionItem = ({ transaction }) => (
-  <div>
-    <div>
-      <h3 className="list-item__title">{transaction.date}</h3>
-    </div>
-    <div>
-      <h3 className="list-item__title">{transaction.description}</h3>
-    </div>
-    <div>
-        <h3 className="list-item__data">{transaction.amount}</h3>
-    </div>
-    <div>
-        <h3 className="list-item__data">{transaction.type}</h3>
-    </div>
-    <div>
-        <h3 className="list-item__data">{transaction.account}</h3>
-    </div>
-  </div>
+  <tr className="table-row">
+      <td className="table-row-data">{transaction.date}</td>
+      <td className="table-row-data-long">{transaction.description}</td>
+      <td className="table-row-data">{transaction.amount}</td>
+      <td className="table-row-data">{transaction.type}</td>
+      <td className="table-row-data">{transaction.account}</td>
+  </tr>
 );
 
 export default TransactionItem;

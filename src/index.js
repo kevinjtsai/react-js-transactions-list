@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './styles/index.scss';
 import TransactionsApp from './components/TransactionsApp';
 import * as serviceWorker from './serviceWorker';
 

@@ -21,8 +21,8 @@ const TransactionsList = () => {
             <tbody className="table-body">
             {
             selectTransactions(transactions, filters).length === 0 ? (
-                <tr className="table-item">
-                <span>No transactions</span>
+                <tr className="table-row">
+                    <td className="table-row-data">No transactions found</td>
                 </tr>
             ) : (
                 selectTransactions(transactions, filters).map((transaction) => {

@@ -4,14 +4,14 @@ const selectTransactions = (transactions, { searchText, sortBy, startDate, endDa
   return transactions.filter((transaction) => {
     console.log("description is: " + transaction.description);
     const createdAtMoment = moment(transaction.createdAt);
-    const startDateMatch = startDate ? startDate.isSameOrBefore(createdAtMoment, 'day') : true;
-    const endDateMatch = endDate ? endDate.isSameOrAfter(createdAtMoment, 'day') : true;
+    const startDateMatch = startDate ? startDate.isSameOrBefore(createdAtMoment, "day") : true;
+    const endDateMatch = endDate ? endDate.isSameOrAfter(createdAtMoment, "day") : true;
     const textMatch = transaction.description.toLowerCase().includes(searchText.toLowerCase());
     return startDateMatch && endDateMatch && textMatch;
   }).sort((a, b) => {
-    if (sortBy === 'date') {
+    if (sortBy === "date") {
       return a.createdAt < b.createdAt ? 1 : -1;
-    } else if (sortBy === 'amount') {
+    } else if (sortBy === "amount") {
       return a.amount < b.amount ? 1 : -1;
     }
     return 0;

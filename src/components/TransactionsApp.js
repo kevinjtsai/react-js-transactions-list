@@ -30,9 +30,9 @@ function TransactionsApp() {
   }, []);
 
   return (
-    <TransactionsContext.Provider className="app" value={{ transactions, transactionsDispatch, filters, filtersDispatch }}>
-      <div className="app-container">
-        <header className="app-header">
+    <TransactionsContext.Provider className="transctions" value={{ transactions, transactionsDispatch, filters, filtersDispatch }}>
+      <div className="transctions-container">
+        <header className="transctions-header">
           <h1 className="transctions-title">Transactions</h1>
         </header>
         <TransactionFilters />

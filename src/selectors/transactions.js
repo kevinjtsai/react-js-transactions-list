@@ -2,7 +2,6 @@ import moment from 'moment';
 
 const selectTransactions = (transactions, { searchText, sortBy, startDate, endDate }) => {
   return transactions.filter((transaction) => {
-    console.log("description is: " + transaction.description);
     const createdAtMoment = moment(transaction.createdAt);
     const startDateMatch = startDate ? startDate.isSameOrBefore(createdAtMoment, "day") : true;
     const endDateMatch = endDate ? endDate.isSameOrAfter(createdAtMoment, "day") : true;

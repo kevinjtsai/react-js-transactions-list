@@ -19,12 +19,9 @@ function TransactionsApp() {
   const [ filters, filtersDispatch ] = useReducer(filtersReducer, filtersReducerDefaultState);
   const [ transactions, transactionsDispatch ] = useReducer(transactionsReducer, []);
 
-  console.log("filters " + filters);
-
   useEffect(() => {
     const transactions = mockData;
     if (transactions) {
-      console.log('dispatching populate_transactions')
       transactionsDispatch({ type: 'POPULATE_TRANSACTIONS', transactions });
     }
   }, []);

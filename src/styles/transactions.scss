@@ -37,12 +37,15 @@
 }
 
 .dd-header {
-  border: 1px solid white;
+  background: #598CDA;
+  border: 1px solid #598CDA;
   box-shadow: 2px 2px 6px lighten(#A2B2FA, 13%);
   width: 150px;
   border-radius: 20px;
+  color: white;
   font-size: 12px;
   padding: .5rem 0rem .5rem 0rem;
+  margin-right: 20px;
 }
 
 .dd-header-title {
@@ -66,7 +69,7 @@
 
 .dd-list-item {
   list-style: none;
-  padding: 10px;
+  padding: 20px 0px 20px 20px;
   &:hover {
     background: #A2B2FA;
     color: white;

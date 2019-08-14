@@ -1,7 +1,7 @@
 import React, { useEffect, useReducer } from 'react';
 import '../styles/transactions.scss';
 import TransactionFilters from '../components/TransactionFilters';
-import TransactionList from '../components/TransactionList';
+import TransactionsTable from '../components/TransactionsTable';
 import TransactionsContext from '../context/transactions-context';
 import transactionsReducer from '../reducers/transactions';
 import filtersReducer from '../reducers/filters';
@@ -33,7 +33,7 @@ function TransactionsApp() {
           <h1 className="transctions-title">Transactions</h1>
         </header>
         <TransactionFilters />
-        <TransactionList />
+        <TransactionsTable />
       </div>
     </TransactionsContext.Provider>
   );

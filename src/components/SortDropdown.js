@@ -1,28 +1,22 @@
 import React from 'react';
 import Dropdown from './Dropdown';
 
-export default class AccountsDropdown extends React.Component {
+export default class SortDropdown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      accounts: [
+      sortBy: [
         {
             id: 0,
-            title: 'Sapphire Reserve',
+            title: 'Date',
             selected: false,
-            key: 'accounts'
+            key: 'sortBy'
         },
         {
           id: 1,
-          title: 'Amazon',
+          title: 'Amount',
           selected: false,
-          key: 'accounts'
-        },
-        {
-          id: 2,
-          title: 'Freedom',
-          selected: false,
-          key: 'accounts'
+          key: 'sortBy'
         },
       ]
     };
@@ -30,19 +24,23 @@ export default class AccountsDropdown extends React.Component {
   };
 
   toggleSelected(id, key){
-    console.log("the value of this: " + this);
     let temp = this.state[key]
     temp[id].selected = !temp[id].selected
     this.setState({
       [key]: temp
     })
+    if (this.state[key][id].title === "Date") {
+        this.props.dispatch({ type: 'SORT_BY_DATE' });
+    } else if (this.state[key][id].title === "Amount") {
+        this.props.dispatch({ type: 'SORT_BY_AMOUNT' });
+    }
   }
 
   render() {
     return (
       <Dropdown
-        title="Accounts"
-        list={this.state.accounts}
+        title="Order By"
+        list={this.state.sortBy}
         toggleItem={this.toggleSelected}
       />
     )

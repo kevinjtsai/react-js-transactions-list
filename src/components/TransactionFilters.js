@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import TransactionsContext from '../context/transactions-context';
 import AccountsDropdown from '../components/AccountsDropdown';
+import SortDropdown from '../components/SortDropdown';
 
 const TransactionFilters = () => {
   const { filters, filtersDispatch } = useContext(TransactionsContext);
@@ -26,7 +27,8 @@ const TransactionFilters = () => {
             <option value="amount">Amount</option>
           </select>
         </div> */}
-        <AccountsDropdown className="custom-dropdown"/>
+        <AccountsDropdown className="custom-dropdown" dispatch={filtersDispatch} />
+        <SortDropdown className="custom-dropdown" dispatch={filtersDispatch} />
       </div>
       <div className="filters-right">
         <input

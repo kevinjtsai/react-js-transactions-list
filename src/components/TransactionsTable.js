@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import TransactionListItem from './TransactionItem';
+import TransactionRow from './TransactionRow';
 import TransactionsContext from '../context/transactions-context';
 import selectTransactions from '../selectors/transactions';
 
-const TransactionsList = () => {
+const TransactionsTable = () => {
 
     const { transactions, filters } = useContext(TransactionsContext);
 
@@ -26,7 +26,7 @@ const TransactionsList = () => {
                 </tr>
             ) : (
                 selectTransactions(transactions, filters).map((transaction) => {
-                return <TransactionListItem key={transactions.description} transaction={transaction} />;
+                return <TransactionRow key={transactions.description} transaction={transaction} />;
                 })
             )
             }
@@ -35,4 +35,4 @@ const TransactionsList = () => {
     )
 };
 
-export { TransactionsList as default }
+export { TransactionsTable as default }

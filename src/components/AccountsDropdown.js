@@ -9,19 +9,19 @@ export default class AccountsDropdown extends React.Component {
         {
             id: 0,
             title: 'Sapphire Reserve',
-            selected: false,
+            selected: true,
             key: 'accounts'
         },
         {
           id: 1,
           title: 'Amazon',
-          selected: false,
+          selected: true,
           key: 'accounts'
         },
         {
           id: 2,
           title: 'Freedom',
-          selected: false,
+          selected: true,
           key: 'accounts'
         },
       ]
@@ -30,12 +30,18 @@ export default class AccountsDropdown extends React.Component {
   };
 
   toggleSelected(id, key){
-    console.log("the value of this: " + this);
+    const selectedAccounts = [];
     let temp = this.state[key]
     temp[id].selected = !temp[id].selected
     this.setState({
       [key]: temp
     })
+    this.state.accounts.forEach(account => {
+      if (account.selected === true) {
+        selectedAccounts.push(account.title);
+      }
+    });
+    this.props.dispatch({ type: 'SET_ACCOUNTS_FILTER', accounts: selectedAccounts });
   }
 
   render() {

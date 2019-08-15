@@ -8,14 +8,24 @@ import filtersReducer from '../reducers/filters';
 import mockData from '../mock-data/mock-data';
 import moment from 'moment';
 
+
+const allAccounts = [];
+
+mockData.forEach(data => {
+  if(!allAccounts.includes(data.account)) allAccounts.push(data.account);
+});
+
+console.log("initial all accounts array: " + allAccounts);
+
 const filtersReducerDefaultState = {
   searchText: '',
   sortBy: 'date',
   startDate: moment().startOf('month'),
   endDate: moment().endOf('month'),
+  accounts: allAccounts,
 };
 
-function TransactionsApp() {
+export default function TransactionsApp() {
   const [ filters, filtersDispatch ] = useReducer(filtersReducer, filtersReducerDefaultState);
   const [ transactions, transactionsDispatch ] = useReducer(transactionsReducer, []);
 
@@ -38,5 +48,3 @@ function TransactionsApp() {
     </TransactionsContext.Provider>
   );
 }
-
-export default TransactionsApp;

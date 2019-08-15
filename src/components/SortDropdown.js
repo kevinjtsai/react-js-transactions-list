@@ -5,18 +5,18 @@ export default class SortDropdown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      sortBy: [
+      sortByOptions: [
         {
             id: 0,
             title: 'Date',
-            selected: false,
-            key: 'sortBy'
+            selected: true,
+            key: 'sortByOptions'
         },
         {
           id: 1,
           title: 'Amount',
           selected: false,
-          key: 'sortBy'
+          key: 'sortByOptions'
         },
       ]
     };
@@ -24,8 +24,9 @@ export default class SortDropdown extends React.Component {
   };
 
   toggleSelected(id, key){
+    this.state.sortByOptions.map(option => option.selected = false);
     let temp = this.state[key]
-    temp[id].selected = !temp[id].selected
+    temp[id].selected = true;
     this.setState({
       [key]: temp
     })
@@ -40,7 +41,7 @@ export default class SortDropdown extends React.Component {
     return (
       <Dropdown
         title="Order By"
-        list={this.state.sortBy}
+        list={this.state.sortByOptions}
         toggleItem={this.toggleSelected}
       />
     )

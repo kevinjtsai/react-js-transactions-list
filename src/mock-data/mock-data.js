@@ -11,14 +11,14 @@ const mockData = [
         description: 'SQ *THINK COFFEE TRIBECA',
         amount: 200.21,
         type: 'Restaurants',
-        account: 'Sapphire Reserve'
+        account: 'Amazon'
     },
     {
         date: '3/31/19',
         description: 'STARBUCKS STORE 14540',
         amount: 29.21,
         type: 'Restaurants',
-        account: 'Sapphire Reserve'
+        account: 'Freedom'
     },
     {
         date: '3/31/19',
@@ -32,7 +32,7 @@ const mockData = [
         description: 'TST* THE HOUSE',
         amount: 15.21,
         type: 'Restaurants',
-        account: 'Sapphire Reserve'
+        account: 'Amazon'
     },
     {
         date: '3/31/19',
@@ -46,14 +46,14 @@ const mockData = [
         description: 'FAIRWAY CHELSEA',
         amount: 62.21,
         type: 'Restaurants',
-        account: 'Sapphire Reserve'
+        account: 'Freedom'
     },
     {
         date: '3/31/19',
         description: 'TRADER JOE\'S #544 QPS',
         amount: 52.21,
         type: 'Restaurants',
-        account: 'Sapphire Reserve'
+        account: 'Amazon'
     },
     {
         date: '3/31/19',

@@ -3,7 +3,7 @@ import TransactionRow from './TransactionRow';
 import TransactionsContext from '../context/transactions-context';
 import selectTransactions from '../selectors/transactions';
 
-const TransactionsTable = () => {
+export default function TransactionsTable() {
 
     const { transactions, filters } = useContext(TransactionsContext);
 
@@ -34,5 +34,3 @@ const TransactionsTable = () => {
         </table>
     )
 };
-
-export { TransactionsTable as default }

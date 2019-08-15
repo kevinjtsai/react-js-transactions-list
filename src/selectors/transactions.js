@@ -1,12 +1,13 @@
 import moment from 'moment';
 
-const selectTransactions = (transactions, { searchText, sortBy, startDate, endDate }) => {
+export default function selectTransactions(transactions, { searchText, sortBy, startDate, endDate, accounts }) {
   return transactions.filter((transaction) => {
     const createdAtMoment = moment(transaction.createdAt);
     const startDateMatch = startDate ? startDate.isSameOrBefore(createdAtMoment, "day") : true;
     const endDateMatch = endDate ? endDate.isSameOrAfter(createdAtMoment, "day") : true;
     const textMatch = transaction.description.toLowerCase().includes(searchText.toLowerCase());
-    return startDateMatch && endDateMatch && textMatch;
+    const accountsMatch = accounts.includes(transaction.account);
+    return startDateMatch && endDateMatch && textMatch && accountsMatch;
   }).sort((a, b) => {
     if (sortBy === "date") {
       return a.createdAt < b.createdAt ? 1 : -1;
@@ -16,5 +17,3 @@ const selectTransactions = (transactions, { searchText, sortBy, startDate, endDa
     return 0;
   });
 };
-
-export { selectTransactions as default }

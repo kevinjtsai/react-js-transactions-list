@@ -19,7 +19,7 @@
 .transctions-title {
   margin-left: 0px;
   padding: 0 0rem;
-  font-size: 24px;
+  font-size: 2rem;
 }
 
 .filters-container {
@@ -41,11 +41,11 @@
   border: 1px solid #598CDA;
   box-shadow: 2px 2px 6px lighten(#A2B2FA, 13%);
   width: 150px;
-  border-radius: 20px;
+  border-radius: 50px;
   color: white;
-  font-size: 12px;
-  padding: .5rem 0rem .5rem 0rem;
-  margin-right: 20px;
+  font-size: 1rem;
+  padding: .75rem 0rem .75rem 0rem;
+  margin-right: 1rem;
 }
 
 .dd-header-title {
@@ -61,56 +61,34 @@
   border: 1px solid white;
   background: white;
   box-shadow: 2px 2px 6px lighten(#A2B2FA, 13%);
-  width: 150px;
+  width: 200px;
   border-radius: 20px;
-  font-size: 12px;
+  font-size: 1rem;
   padding: .5rem 0rem .5rem 0rem;
 }
 
 .dd-list-item {
   list-style: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 180px;
   padding: 20px 0px 20px 20px;
   &:hover {
-    background: #A2B2FA;
-    color: white;
+    background: lighten(#A2B2FA, 13%);
     border-radius: 10px;
   }
 }
-
-// .select-style {
-//   border: 1px solid white;
-//   box-shadow: 2px 2px 6px lighten(#A2B2FA, 13%);
-//   width: 100px;
-//   border-radius: 20px;
-//   font-size: 12px;
-//   font-weight: 300;
-//   padding: .5rem 0rem .5rem 0rem;
-//   //background: #fafafa url("img/icon-select.png") no-repeat 90% 50%;
-// }
-
-// .select-style select {
-//   padding: 5px 8px;
-//   width: 100%;
-//   border: none;
-//   box-shadow: none;
-//   background: transparent;
-//   background-image: none;
-//   -webkit-appearance: none;
-// }
-
-// .select-style select:focus {
-//   outline: none;
-// }
 
 .search-text-input {
   border: 1px solid white;
   box-shadow: 2px 2px 6px lighten(#A2B2FA, 13%);
   height: 5px;
   width: 250px;
-  border-radius: 20px;
-  font-size: 12px;
+  border-radius: 50px;
+  font-size: 1rem;
   font-weight: 300;
-  padding: 1rem 0rem 1rem 1.5rem;
+  padding: 1.25rem 0rem 1.25rem 1.75rem;
   &:focus {
     outline: none;
   }
@@ -144,7 +122,7 @@
 .table-header-row-data {
   margin: 1.2rem 0 0 0;
   width: 17.5%;
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: 700;
 }
 
@@ -167,7 +145,7 @@
   padding: 0.1rem 1rem 1rem 1rem;
   transition: background .3s ease;
   &:hover {
-    background: #A2B2FA;
+    background: #598CDA;
     color: white;
   }
 }
@@ -175,12 +153,12 @@
 .table-row-data {
   margin: 1.2rem 0 0 0;
   width: 17.5%;
-  font-size: 14px;
+  font-size: 1rem;
 }
 
 .table-row-data-long {
   margin: 1.2em 0 0 0;
   width: 30%;
-  font-size: 14px;
+  font-size: 1rem;
 }
 

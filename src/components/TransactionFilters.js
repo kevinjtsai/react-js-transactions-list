@@ -6,27 +6,9 @@ import SortDropdown from '../components/SortDropdown';
 const TransactionFilters = () => {
   const { filters, filtersDispatch } = useContext(TransactionsContext);
 
-  // const onSortChange = (e) => {
-  //   if (e.target.value === "date") {
-  //     filtersDispatch({ type: 'SORT_BY_DATE' });
-  //   } else if (e.target.value === "amount") {
-  //     filtersDispatch({ type: 'SORT_BY_AMOUNT' });
-  //   }
-  // }
-
   return (
     <div className="filters-container">
       <div className="filters-left">
-        {/* <div className="select-style">
-          <select
-            className="select"
-            value={filters.sortBy}
-            onChange={(e) => onSortChange(e)}
-          >
-            <option value="date">Date</option>
-            <option value="amount">Amount</option>
-          </select>
-        </div> */}
         <AccountsDropdown className="custom-dropdown" dispatch={filtersDispatch} />
         <SortDropdown className="custom-dropdown" dispatch={filtersDispatch} />
       </div>

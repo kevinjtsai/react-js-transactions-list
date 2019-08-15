@@ -1,4 +1,4 @@
-const filtersReducer = (state, action) => {
+export default function filtersReducer(state, action) {
   switch (action.type) {
     case 'SET_SEARCH_TEXT_FILTER':
       return {
@@ -25,9 +25,12 @@ const filtersReducer = (state, action) => {
         ...state,
         endDate: action.endDate,
       }
+    case 'SET_ACCOUNTS_FILTER':
+      return {
+        ...state,
+        accounts: action.accounts,
+      }
     default:
       return state;
   }
 };
-
-export { filtersReducer as default }
